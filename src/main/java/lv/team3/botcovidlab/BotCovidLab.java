@@ -38,6 +38,9 @@ public class BotCovidLab {
         JsonObject settings = HerokuUtils.getFacebookSettings();
         LabLogger.info("Messenger settings loaded");
         LabLogger.info("Creating messenger");
+//        if(true) {
+//            return Messenger.create(" ", " ", " ");
+//        }
         return Messenger.create(settings.getString("access"), settings.getString("secret"), settings.getString("token"));
     }
 
