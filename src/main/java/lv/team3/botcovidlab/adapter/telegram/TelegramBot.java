@@ -1,11 +1,13 @@
 package lv.team3.botcovidlab.adapter.telegram;
 
+import lv.team3.botcovidlab.utils.HerokuUtils;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import javax.json.JsonObject;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -17,17 +19,14 @@ import java.util.logging.Logger;
  */
 @Component
 public  class TelegramBot extends TelegramLongPollingCommandBot {
-//    private String name="LvKoronaTrc_bot";
-//    private String token="1461376238:AAGLfBnjyZtk1MnB7WjZxSseeWYCqwRAzKc";
-    private String name="LettersInSpringBot";
-    private String token="998565460:AAFCpgrGSRBh_EDeRZoD33zZxcrd7XHfmzw";
+    private JsonObject settings = HerokuUtils.getTelegramSettings();
     private static final Logger log = Logger.getLogger(String.valueOf(TelegramBot.class));
 
     public TelegramBot() {}
 
     @Override
     public String getBotUsername() {
-        return name;
+        return settings.getString("name");
     }
 
     @Override
@@ -36,7 +35,7 @@ public  class TelegramBot extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return token;
+        return settings.getString("token");
     }
 
     @Override

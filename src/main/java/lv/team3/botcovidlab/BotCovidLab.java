@@ -9,16 +9,13 @@ import lv.team3.botcovidlab.utils.HerokuUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.generics.LongPollingBot;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
-
 
 import javax.json.JsonObject;
 import java.util.Map;
@@ -41,31 +38,34 @@ public class BotCovidLab {
         JsonObject settings = HerokuUtils.getFacebookSettings();
         LabLogger.info("Messenger settings loaded");
         LabLogger.info("Creating messenger");
+//        if(true) {
+//            return Messenger.create(" ", " ", " ");
+//        }
         return Messenger.create(settings.getString("access"), settings.getString("secret"), settings.getString("token"));
     }
-
-    private static final Map<String, String> getenv = System.getenv();
 
     public static void main(String[] args) {
         SpringApplication.run(BotCovidLab.class, args);
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             TelegramBot telegramBot = new TelegramBot();
-            botsApi.registerBot((LongPollingBot) telegramBot);
+            botsApi.registerBot(telegramBot);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
 
-        Random r = new Random();
-        for(int i = 0; i < 3; i++) {
-            generateRandomOuhBoy(r);
-        }
+//        TODO Used for testing, remove after presentation
+//        Random r = new Random();
+//        for(int i = 0; i < 27; i++) {
+//            generateRandomOuhBoy(r);
+//        }
     }
 
     public static void generateRandomOuhBoy(Random random) {
         String[] sil = {
                 "as", "kol", "si", "moa", "dom", "bois", "kuls", "nus", "jan", "vlad", "val", "ter", "is", "lav", "ni",
-                "ma", "dar", "ke", "kon", "koj", "veme", "lada", "nag", "jup", "sina", "red", "ger", "za", "jat", "be"
+                "ma", "dar", "ke", "kon", "koj", "veme", "lada", "nag", "jup", "sina", "red", "ger", "za", "jat", "be",
+                "ta", "man", "gir", "vie", "re", "nar", "te", "man", "da", "mar", "tin", "gor", "nit", "ser", "tif"
         };
         String pid = String.format("%06d-%05d", random.nextInt(1000000), random.nextInt(100000));
         String tem = String.format("%.1f", 35.6F + (random.nextFloat() * 6.0F));
