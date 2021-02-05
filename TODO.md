@@ -7,7 +7,7 @@
 ---
 ### 3. Manage reservations for Covid-19 test visits (users can apply using bots, administrators can see details and list etc.) `(Janis / Kras)` :white_check_mark: <br/>
 ---
-### 4. Manual/JUnit tests for remaining functionality/Bot and core BotCovidLab testing. <br/>
+### 4. Manual/JUnit tests for remaining functionality/Bot and core BotCovidLab testing. :white_check_mark: <br/>
 > 4.1 Tests for Telegram `(Kras)` :white_check_mark: <br/>
 > 4.2 Tests for Facebook `(Vlad)` :white_check_mark: <br/>
 > 4.3.1 Tests for DataSource `(Janis)` :white_check_mark: <br/>
@@ -20,7 +20,7 @@
 ---
 ### 5. Documentation about BotCovidLab features. `(Valters)` :white_check_mark: <br/>
 ---
-### 6. BotCovidLab javadoc documentation. <br/>
+### 6. BotCovidLab javadoc documentation. :white_check_mark: <br/>
 > 6.1 Javadoc for Telegram `(Kras)` :white_check_mark: <br/>
 > 6.2 Javadoc for Facebook `(Vlad)` :white_check_mark: <br/>
 > 6.3 Javadoc for Firebase `(Valters)` :white_check_mark: <br/>
@@ -30,7 +30,7 @@
 > 6.4.4 Javadoc for ProcessorUtils `(Janis)` :white_check_mark: <br/>
 > 6.4.5 Javadoc for DateUtils `(Janis)` :white_check_mark: <br/>
 > 6.4.6 Javadoc for CovidStats `(Janis)` :white_check_mark: <br/>
-### 7. Validate javadoc manually. <br/>
+### 7. Validate javadoc manually. :white_check_mark: <br/>
 > 7.1 Javadoc for Telegram `(Kras)` :white_check_mark: <br/>
 > 7.2 Javadoc for Facebook `(Vlad)` :white_check_mark: <br/>
 > 7.3 Javadoc for Firebase `(Valters)` :white_check_mark: <br/>
