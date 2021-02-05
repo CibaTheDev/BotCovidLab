@@ -21,6 +21,11 @@ public class HerokuUtils {
     }
 
     public static JsonObject getTelegramSettings() {
-        return null;
+        try {
+            String settings = System.getenv("telegramSettings");
+            return Json.createReader(new StringReader(settings)).readObject();
+        } catch (Exception ignore) {
+            return null;
+        }
     }
 }
