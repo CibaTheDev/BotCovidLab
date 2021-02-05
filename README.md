@@ -62,7 +62,7 @@ In order to connect the application to Firebase and develop admin access, follow
 
 
 ## WebAplication for database management
-Application provides easy access to the list of registered patients. Employee of laboratory can view entries and delete them, if needed.
+Application provides easy access to the list of registered patients. Employee of laboratory can view, edit and delete entries, if needed. Field input validation is provided.
 
 # Covid-19 Data
 COVID-19 data is being provided by [**Disease.sh - Open Disease data**](https://corona.lmao.ninja/)
