@@ -38,6 +38,9 @@ public class BotCovidLab {
         JsonObject settings = HerokuUtils.getFacebookSettings();
         LabLogger.info("Messenger settings loaded");
         LabLogger.info("Creating messenger");
+//        if(true) {
+//            return Messenger.create(" ", " ", " ");
+//        }
         return Messenger.create(settings.getString("access"), settings.getString("secret"), settings.getString("token"));
     }
 
@@ -51,16 +54,18 @@ public class BotCovidLab {
             e.printStackTrace();
         }
 
-        Random r = new Random();
-        for(int i = 0; i < 27; i++) {
-            generateRandomOuhBoy(r);
-        }
+//        TODO Used for testing, remove after presentation
+//        Random r = new Random();
+//        for(int i = 0; i < 27; i++) {
+//            generateRandomOuhBoy(r);
+//        }
     }
 
     public static void generateRandomOuhBoy(Random random) {
         String[] sil = {
                 "as", "kol", "si", "moa", "dom", "bois", "kuls", "nus", "jan", "vlad", "val", "ter", "is", "lav", "ni",
-                "ma", "dar", "ke", "kon", "koj", "veme", "lada", "nag", "jup", "sina", "red", "ger", "za", "jat", "be"
+                "ma", "dar", "ke", "kon", "koj", "veme", "lada", "nag", "jup", "sina", "red", "ger", "za", "jat", "be",
+                "ta", "man", "gir", "vie", "re", "nar", "te", "man", "da", "mar", "tin", "gor", "nit", "ser", "tif"
         };
         String pid = String.format("%06d-%05d", random.nextInt(1000000), random.nextInt(100000));
         String tem = String.format("%.1f", 35.6F + (random.nextFloat() * 6.0F));
